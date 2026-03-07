@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rizwan Computer | Printing, Documentation, Stationery & Office Supply</title>
+  <meta name="description" content="Rizwan Computer offers professional printing, photocopy, designing, typing, legal documentation, school stationery, office supply, scanning, lamination and binding services in a clean modern website experience." />
+  <link rel="icon" type="image/png" href="https://i.ibb.co/xKyZvY46/Rizwan-Computer-Logo.png" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { font-family: 'Poppins', sans-serif; }
+    html { scroll-behavior: smooth; }
+    body {
+      overflow-x: hidden;
+      color: #0f172a;
+      background:
+        radial-gradient(circle at top left, rgba(34,211,238,0.12), transparent 24%),
+        radial-gradient(circle at bottom right, rgba(59,130,246,0.12), transparent 30%),
+        linear-gradient(180deg, #f9fcff 0%, #eef6ff 48%, #ffffff 100%);
+    }
+    .nav-glass {
+      background: rgba(255,255,255,0.86);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(148,163,184,0.18);
+    }
+    .glass-card {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(148,163,184,0.18);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 20px 60px rgba(15,23,42,0.08);
+    }
+    .soft-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(244,249,255,0.98));
+      border: 1px solid rgba(148,163,184,0.15);
+      box-shadow: 0 18px 40px rgba(15,23,42,0.07);
+    }
+    .hero-grid {
+      background-image:
+        linear-gradient(rgba(148,163,184,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148,163,184,0.08) 1px, transparent 1px);
+      background-size: 34px 34px;
+    }
+    .text-gradient {
+      background: linear-gradient(135deg, #2563eb 0%, #06b6d4 58%, #7c3aed 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .border-gradient { position: relative; }
+    .border-gradient::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(37,99,235,0.32), rgba(6,182,212,0.20), rgba(124,58,237,0.20));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    .orb {
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(72px);
+      opacity: .58;
+      animation: float 8s ease-in-out infinite;
+    }
+    .orb.one { width: 260px; height: 260px; background: rgba(34,211,238,0.24); top: 70px; left: -60px; }
+    .orb.two { width: 320px; height: 320px; background: rgba(59,130,246,0.18); top: 110px; right: -70px; animation-delay: 1.3s; }
+    .orb.three { width: 260px; height: 260px; background: rgba(168,85,247,0.14); bottom: 40px; left: 34%; animation-delay: 2.2s; }
+    .float-card { animation: float 6s ease-in-out infinite; }
+    .float-card.delay { animation-delay: 1.6s; }
+    .hover-lift {
+      transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+    }
+    .hover-lift:hover {
+      transform: translateY(-8px);
+      border-color: rgba(37,99,235,0.24);
+      box-shadow: 0 24px 60px rgba(15,23,42,0.10);
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .badge-glow {
+      box-shadow: 0 0 0 0 rgba(34,211,238,0.22);
+      animation: pulse 2.6s ease-in-out infinite;
+    }
+    .section-title {
+      font-size: clamp(2.1rem, 4vw, 3.7rem);
+      line-height: 1.06;
+    }
+    .service-icon {
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 10px 24px rgba(15,23,42,0.08);
+    }
+    .star { color: #f59e0b; }
+    .review-avatar {
+      background: linear-gradient(135deg, #eff6ff, #f8fafc);
+      border: 1px solid rgba(148,163,184,0.18);
+    }
+    .cta-button {
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px rgba(37,99,235,0.14);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-16px) translateX(10px); }
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(34,211,238,0.20); }
+      50% { box-shadow: 0 0 0 14px rgba(34,211,238,0); }
+    }
+  </style>
+</head>
+<body>
+  <nav id="navbar" class="fixed inset-x-0 top-0 z-50 nav-glass transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="h-20 flex items-center justify-between">
+        <a href="#home" class="flex items-center gap-3">
+          <div class="w-14 h-14 rounded-2xl overflow-hidden bg-white shadow-lg shadow-cyan-500/10 ring-1 ring-slate-200">
+            <img src="https://i.ibb.co/xKyZvY46/Rizwan-Computer-Logo.png" alt="Rizwan Computer Logo" class="w-full h-full object-cover" />
+          </div>
+          <div>
+            <div class="font-extrabold text-lg text-slate-900 leading-tight">Rizwan Computer</div>
+            <div class="text-xs text-slate-600">Printing • Photocopy • Documentation</div>
+          </div>
+        </a>
+
+        <div class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-700">
+          <a href="#home" class="hover:text-cyan-600 transition">Home</a>
+          <a href="#services" class="hover:text-cyan-600 transition">Services</a>
+          <a href="#reviews" class="hover:text-cyan-600 transition">Reviews</a>
+          <a href="#contact" class="hover:text-cyan-600 transition">Contact</a>
+        </div>
+
+        <button class="md:hidden text-slate-900 text-2xl" onclick="toggleMobileMenu()" aria-label="Toggle Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 bg-white/95 backdrop-blur-xl">
+      <div class="px-4 py-4 space-y-3 text-sm font-medium text-slate-700">
+        <a href="#home" class="block py-2">Home</a>
+        <a href="#services" class="block py-2">Services</a>
+        <a href="#reviews" class="block py-2">Reviews</a>
+        <a href="#contact" class="block py-2">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="relative min-h-screen pt-30 pb-18 hero-grid overflow-hidden">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+    <div class="orb three"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-14 items-center min-h-[82vh]">
+        <div class="reveal active">
+          <div class="inline-flex items-center gap-3 rounded-full px-4 py-2 glass-card badge-glow text-sm text-slate-700">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            Trusted for Printing, Documentation & Stationery
+          </div>
+
+          <h1 class="mt-7 section-title font-black text-slate-900">
+            Smart Solutions for
+            <span class="text-gradient">Printing, Designing</span>
+            and Daily Documentation
+          </h1>
+
+          <p class="mt-6 text-lg text-slate-600 max-w-2xl leading-8">
+            Rizwan Computer brings together professional printing, photocopy, designing, typing, legal documentation, school stationery, office supply, scanning, lamination and binding services in one modern business presence.
+          </p>
+
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#services" class="cta-button inline-flex items-center gap-2 rounded-full bg-slate-900 text-white px-7 py-3.5 font-semibold">
+              Explore Services
+              <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="cta-button inline-flex items-center gap-2 rounded-full border border-slate-300 text-slate-800 px-7 py-3.5 font-semibold hover:bg-white">
+              <i class="fas fa-paper-plane"></i>
+              Contact Now
+            </a>
+          </div>
+
+          <div class="mt-10 grid sm:grid-cols-3 gap-4">
+            <div class="glass-card rounded-2xl p-5 border-gradient">
+              <div class="text-3xl font-extrabold text-slate-900 counter" data-target="5000">0</div>
+              <div class="text-sm text-slate-600 mt-1">Jobs completed</div>
+            </div>
+            <div class="glass-card rounded-2xl p-5 border-gradient">
+              <div class="text-3xl font-extrabold text-slate-900 counter" data-target="100">0</div>
+              <div class="text-sm text-slate-600 mt-1">Customer care focus</div>
+            </div>
+            <div class="glass-card rounded-2xl p-5 border-gradient">
+              <div class="text-3xl font-extrabold text-slate-900 counter" data-target="6">0</div>
+              <div class="text-sm text-slate-600 mt-1">Core service categories</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative reveal active">
+          <div class="glass-card border-gradient rounded-[2rem] p-5 sm:p-6">
+            <div class="soft-card rounded-[1.6rem] p-6 sm:p-7">
+              <div class="flex items-center justify-between gap-4 mb-7">
+                <div class="flex items-center gap-3">
+                  <div class="w-14 h-14 rounded-2xl overflow-hidden bg-white ring-1 ring-slate-200">
+                    <img src="https://i.ibb.co/xKyZvY46/Rizwan-Computer-Logo.png" alt="Rizwan Computer" class="w-full h-full object-cover">
+                  </div>
+                  <div>
+                    <div class="font-bold text-slate-900">Rizwan Computer</div>
+                    <div class="text-xs text-slate-500">Printing • Photocopy • Documentation</div>
+                  </div>
+                </div>
+                <div class="px-3 py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-sm font-semibold">
+                  Quality Service
+                </div>
+              </div>
+
+              <div class="space-y-4">
+                <div class="hover-lift rounded-2xl bg-white border border-slate-200 p-4 flex items-start gap-4">
+                  <div class="service-icon w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center text-xl"><i class="fas fa-print"></i></div>
+                  <div>
+                    <div class="font-semibold text-slate-900">Printing & Photocopy</div>
+                    <div class="text-sm text-slate-500 mt-1">Everyday print work, copies, forms, assignments and office documents</div>
+                  </div>
+                </div>
+                <div class="hover-lift rounded-2xl bg-white border border-slate-200 p-4 flex items-start gap-4">
+                  <div class="service-icon w-12 h-12 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-xl"><i class="fas fa-pen-ruler"></i></div>
+                  <div>
+                    <div class="font-semibold text-slate-900">Designing, Typing and Legal Documentation</div>
+                    <div class="text-sm text-slate-500 mt-1">Professional layouts, document drafting, typing support and legal paperwork assistance</div>
+                  </div>
+                </div>
+                <div class="hover-lift rounded-2xl bg-white border border-slate-200 p-4 flex items-start gap-4">
+                  <div class="service-icon w-12 h-12 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center text-xl"><i class="fas fa-school"></i></div>
+                  <div>
+                    <div class="font-semibold text-slate-900">School Stationery and Office Supply</div>
+                    <div class="text-sm text-slate-500 mt-1">Essential stationery, office use items and daily paper-based business needs</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6 grid grid-cols-2 gap-4">
+                <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4">
+                  <div class="text-xs uppercase tracking-widest text-slate-500">Specialty</div>
+                  <div class="text-slate-900 font-semibold mt-1">Documentation & print work</div>
+                </div>
+                <div class="rounded-2xl bg-slate-50 border border-slate-200 p-4">
+                  <div class="text-xs uppercase tracking-widest text-slate-500">Support</div>
+                  <div class="text-slate-900 font-semibold mt-1">Stationery & supply</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="float-card absolute -top-5 right-0 glass-card rounded-2xl px-4 py-3 text-sm text-slate-700 hidden sm:block">
+            <div class="text-cyan-600 font-semibold">Fast Turnaround</div>
+            <div class="text-slate-500">Everyday customer jobs</div>
+          </div>
+          <div class="float-card delay absolute -bottom-4 left-0 glass-card rounded-2xl px-4 py-3 text-sm text-slate-700 hidden sm:block">
+            <div class="text-violet-600 font-semibold">Neat Finish</div>
+            <div class="text-slate-500">Binding & lamination</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto reveal">
+        <div class="inline-flex items-center gap-2 rounded-full glass-card px-4 py-2 text-sm font-semibold text-cyan-700">
+          <i class="fas fa-layer-group"></i>
+          Our Business Services
+        </div>
+        <h2 class="section-title font-extrabold mt-5 text-slate-900">Professional Services for <span class="text-gradient">Work, Study and Documentation</span></h2>
+        <p class="mt-5 text-slate-600 text-lg">From quality print jobs to documentation support and essential stationery, Rizwan Computer is presented here as a complete modern service point for everyday customer needs.</p>
+      </div>
+
+      <div class="mt-14 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div class="soft-card hover-lift rounded-3xl p-7 reveal">
+          <div class="w-14 h-14 rounded-2xl bg-sky-100 text-sky-600 flex items-center justify-center text-2xl service-icon mb-5"><i class="fas fa-print"></i></div>
+          <h3 class="text-xl font-bold text-slate-900">Printing Services</h3>
+          <p class="mt-3 text-slate-600">Color and black & white printing for office work, assignments, forms, letters and daily document jobs.</p>
+          <ul class="mt-5 space-y-2 text-sm text-slate-600">
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i>Document printing</li>
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i>Color printouts</li>
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i>Student and office work</li>
+          </ul>
+        </div>
+
+        <div class="soft-card hover-lift rounded-3xl p-7 reveal">
+          <div class="w-14 h-14 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-2xl service-icon mb-5"><i class="fas fa-copy"></i></div>
+          <h3 class="text-xl font-bold text-slate-900">Photocopy & Xerox</h3>
+          <p class="mt-3 text-slate-600">Quick photocopy service for records, forms, applications, academic papers and office files.</p>
+          <ul class="mt-5 space-y-2 text-sm text-slate-600">
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i>Single & bulk copies</li>
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i>Clean readable output</li>
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i>Walk-in customer jobs</li>
+          </ul>
+        </div>
+
+        <div class="soft-card hover-lift rounded-3xl p-7 reveal">
+          <div class="w-14 h-14 rounded-2xl bg-violet-100 text-violet-600 flex items-center justify-center text-2xl service-icon mb-5"><i class="fas fa-pen-ruler"></i></div>
+          <h3 class="text-xl font-bold text-slate-900">Designing, Typing and Legal Documentation</h3>
+          <p class="mt-3 text-slate-600">Professional typing, document layouts, application drafting and legal documentation support.</p>
+          <ul class="mt-5 space-y-2 text-sm text-slate-600">
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i>Urdu & English typing</li>
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i>Design and formatting</li>
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i>Legal paperwork assistance</li>
+          </ul>
+        </div>
+
+        <div class="soft-card hover-lift rounded-3xl p-7 reveal">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl service-icon mb-5"><i class="fas fa-school"></i></div>
+          <h3 class="text-xl font-bold text-slate-900">School Stationery and Office Supply</h3>
+          <p class="mt-3 text-slate-600">Daily-use stationery and office essentials for students, teachers, businesses and routine customers.</p>
+          <ul class="mt-5 space-y-2 text-sm text-slate-600">
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i>School stationery items</li>
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i>Office use supplies</li>
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i>Everyday customer needs</li>
+          </ul>
+        </div>
+
+        <div class="soft-card hover-lift rounded-3xl p-7 reveal">
+          <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center text-2xl service-icon mb-5"><i class="fas fa-scanner"></i></div>
+          <h3 class="text-xl font-bold text-slate-900">Scanning & File Preparation</h3>
+          <p class="mt-3 text-slate-600">Clear digital scanning for emails, uploads, records and print-ready file preparation.</p>
+          <ul class="mt-5 space-y-2 text-sm text-slate-600">
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i>PDF scanning</li>
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i>Upload-ready files</li>
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i>Organized document prep</li>
+          </ul>
+        </div>
+
+        <div class="soft-card hover-lift rounded-3xl p-7 reveal">
+          <div class="w-14 h-14 rounded-2xl bg-rose-100 text-rose-600 flex items-center justify-center text-2xl service-icon mb-5"><i class="fas fa-id-card-clip"></i></div>
+          <h3 class="text-xl font-bold text-slate-900">Lamination & Binding</h3>
+          <p class="mt-3 text-slate-600">Professional finishing to protect documents and present reports, records and files neatly.</p>
+          <ul class="mt-5 space-y-2 text-sm text-slate-600">
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i>Lamination work</li>
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i>Spiral binding</li>
+            <li><i class="fas fa-check text-emerald-500 mr-2"></i>Presentation finishing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="py-24 bg-white/55">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto reveal">
+        <div class="inline-flex items-center gap-2 rounded-full glass-card px-4 py-2 text-sm font-semibold text-amber-700">
+          <i class="fas fa-star"></i>
+          Customer Reviews
+        </div>
+        <h2 class="section-title font-extrabold mt-5 text-slate-900">Trusted by Customers for <span class="text-gradient">Quality Service</span></h2>
+        <p class="mt-5 text-lg text-slate-600">Customers value quick work, clean output, professional behavior and reliable documentation support.</p>
+      </div>
+
+      <div class="mt-14 grid lg:grid-cols-[1.05fr_.95fr] gap-8 items-start">
+        <div class="glass-card rounded-[2rem] p-6 border-gradient reveal">
+          <div class="soft-card rounded-[1.6rem] p-7">
+            <div class="flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <div class="text-sm text-slate-500">Business Reputation</div>
+                <div class="text-4xl font-black text-slate-900 mt-2">5.0 <span class="text-lg font-semibold text-slate-500">Customer Experience</span></div>
+              </div>
+              <div class="flex gap-1 text-2xl">
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+                <i class="fas fa-star star"></i>
+              </div>
+            </div>
+
+            <div class="mt-8 grid sm:grid-cols-3 gap-4">
+              <div class="rounded-2xl bg-slate-50 border border-slate-200 p-5">
+                <div class="text-sm font-semibold text-slate-900">Fast Service</div>
+                <p class="text-sm text-slate-500 mt-2">Quick handling for print, copy and daily documentation work.</p>
+              </div>
+              <div class="rounded-2xl bg-slate-50 border border-slate-200 p-5">
+                <div class="text-sm font-semibold text-slate-900">Clean Quality</div>
+                <p class="text-sm text-slate-500 mt-2">Neat finishing with clear prints, scans and document preparation.</p>
+              </div>
+              <div class="rounded-2xl bg-slate-50 border border-slate-200 p-5">
+                <div class="text-sm font-semibold text-slate-900">Helpful Support</div>
+                <p class="text-sm text-slate-500 mt-2">Friendly assistance for documentation, stationery and office needs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-5 reveal">
+          <div class="glass-card rounded-3xl p-6 hover-lift border-gradient">
+            <div class="flex items-center gap-4">
+              <div class="review-avatar w-14 h-14 rounded-full flex items-center justify-center text-slate-400 text-xl">
+                <i class="fas fa-user"></i>
+              </div>
+              <div>
+                <div class="font-bold text-slate-900">Customer Satisfaction</div>
+                <div class="text-xs text-slate-500">Printing & documentation</div>
+              </div>
+            </div>
+            <div class="flex gap-1 mt-4">
+              <i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i>
+            </div>
+            <p class="mt-4 text-slate-600 leading-7">Reliable service quality, quick turnaround and well-managed customer work make the business stand out.</p>
+          </div>
+
+          <div class="glass-card rounded-3xl p-6 hover-lift border-gradient">
+            <div class="flex items-center gap-4">
+              <div class="review-avatar w-14 h-14 rounded-full flex items-center justify-center text-slate-400 text-xl">
+                <i class="fas fa-user"></i>
+              </div>
+              <div>
+                <div class="font-bold text-slate-900">Professional Handling</div>
+                <div class="text-xs text-slate-500">Designing & legal documentation</div>
+              </div>
+            </div>
+            <div class="flex gap-1 mt-4">
+              <i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i>
+            </div>
+            <p class="mt-4 text-slate-600 leading-7">Customers appreciate supportive guidance for document formatting, paperwork and important submission requirements.</p>
+          </div>
+
+          <div class="glass-card rounded-3xl p-6 hover-lift border-gradient">
+            <div class="flex items-center gap-4">
+              <div class="review-avatar w-14 h-14 rounded-full flex items-center justify-center text-slate-400 text-xl">
+                <i class="fas fa-user"></i>
+              </div>
+              <div>
+                <div class="font-bold text-slate-900">Everyday Convenience</div>
+                <div class="text-xs text-slate-500">Stationery & office supply</div>
+              </div>
+            </div>
+            <div class="flex gap-1 mt-4">
+              <i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i>
+            </div>
+            <p class="mt-4 text-slate-600 leading-7">A convenient one-stop place for print jobs, document support, stationery items and daily office requirements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 rounded-full glass-card px-4 py-2 text-sm font-semibold text-cyan-700">
+            <i class="fas fa-award"></i>
+            Why Choose Rizwan Computer
+          </div>
+          <h2 class="section-title font-extrabold mt-5 text-slate-900">A Complete Setup for <span class="text-gradient">Printing and Documentation Needs</span></h2>
+          <p class="mt-5 text-lg text-slate-600 leading-8">The website now highlights your business with a clean premium presentation focused on practical customer needs, efficient service and a trustworthy local brand identity.</p>
+
+          <div class="mt-8 space-y-4">
+            <div class="soft-card rounded-2xl p-5 hover-lift flex gap-4 items-start">
+              <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center"><i class="fas fa-print"></i></div>
+              <div>
+                <div class="font-bold text-slate-900">Essential daily services</div>
+                <p class="text-slate-600 mt-1">Printing, photocopy, typing, documentation, scanning and stationery under one business name.</p>
+              </div>
+            </div>
+            <div class="soft-card rounded-2xl p-5 hover-lift flex gap-4 items-start">
+              <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center"><i class="fas fa-folder-open"></i></div>
+              <div>
+                <div class="font-bold text-slate-900">Professional paperwork support</div>
+                <p class="text-slate-600 mt-1">Useful help for organized documents, drafting, formatting and legal documentation tasks.</p>
+              </div>
+            </div>
+            <div class="soft-card rounded-2xl p-5 hover-lift flex gap-4 items-start">
+              <div class="w-12 h-12 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center"><i class="fas fa-boxes-stacked"></i></div>
+              <div>
+                <div class="font-bold text-slate-900">Convenience and supply</div>
+                <p class="text-slate-600 mt-1">Customers can also find school stationery and office supply items as part of the business offering.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="glass-card rounded-[2rem] p-6 border-gradient">
+            <div class="soft-card rounded-[1.6rem] p-7">
+              <div class="flex items-center gap-4">
+                <div class="w-16 h-16 rounded-2xl overflow-hidden bg-white ring-1 ring-slate-200">
+                  <img src="https://i.ibb.co/xKyZvY46/Rizwan-Computer-Logo.png" alt="Rizwan Computer Logo" class="w-full h-full object-cover" />
+                </div>
+                <div>
+                  <div class="text-sm text-slate-500">Business Name</div>
+                  <div class="text-2xl font-black text-slate-900">Rizwan Computer</div>
+                </div>
+              </div>
+
+              <div class="mt-6 grid sm:grid-cols-2 gap-4">
+                <div class="rounded-2xl bg-slate-50 border border-slate-200 p-5">
+                  <div class="text-xs uppercase tracking-widest text-slate-500">Primary</div>
+                  <div class="font-semibold text-slate-900 mt-2">Printing & Photocopy</div>
+                </div>
+                <div class="rounded-2xl bg-slate-50 border border-slate-200 p-5">
+                  <div class="text-xs uppercase tracking-widest text-slate-500">Documentation</div>
+                  <div class="font-semibold text-slate-900 mt-2">Designing & Typing</div>
+                </div>
+                <div class="rounded-2xl bg-slate-50 border border-slate-200 p-5">
+                  <div class="text-xs uppercase tracking-widest text-slate-500">Support</div>
+                  <div class="font-semibold text-slate-900 mt-2">Legal Documentation</div>
+                </div>
+                <div class="rounded-2xl bg-slate-50 border border-slate-200 p-5">
+                  <div class="text-xs uppercase tracking-widest text-slate-500">Supply</div>
+                  <div class="font-semibold text-slate-900 mt-2">Stationery & Office Items</div>
+                </div>
+              </div>
+
+              <div class="mt-7 rounded-3xl bg-slate-50 border border-slate-200 p-5">
+                <div class="text-sm font-semibold text-slate-900">Business Tagline</div>
+                <p class="text-slate-600 mt-2 leading-7">Printing • Photocopy • Documentation</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-24 bg-white/55">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 rounded-full glass-card px-4 py-2 text-sm font-semibold text-cyan-700">
+            <i class="fas fa-paper-plane"></i>
+            Contact Rizwan Computer
+          </div>
+          <h2 class="section-title font-extrabold mt-5 text-slate-900">Get in Touch for <span class="text-gradient">Printing, Documentation and Supply</span></h2>
+          <p class="mt-5 text-lg text-slate-600 leading-8">Use the contact section for service inquiries, urgent document work, print requirements, stationery availability or office supply needs.</p>
+
+          <div class="mt-8 space-y-4">
+            <div class="soft-card rounded-2xl p-5 hover-lift flex gap-4 items-start">
+              <div class="w-12 h-12 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center"><i class="fas fa-print"></i></div>
+              <div>
+                <div class="font-bold text-slate-900">Printing & Photocopy</div>
+                <p class="text-slate-600 mt-1">Everyday print jobs, photocopies and document handling with clear output.</p>
+              </div>
+            </div>
+            <div class="soft-card rounded-2xl p-5 hover-lift flex gap-4 items-start">
+              <div class="w-12 h-12 rounded-xl bg-cyan-100 text-cyan-600 flex items-center justify-center"><i class="fas fa-pen-ruler"></i></div>
+              <div>
+                <div class="font-bold text-slate-900">Designing, Typing and Legal Documentation</div>
+                <p class="text-slate-600 mt-1">Useful support for document formatting, drafting and important paperwork.</p>
+              </div>
+            </div>
+            <div class="soft-card rounded-2xl p-5 hover-lift flex gap-4 items-start">
+              <div class="w-12 h-12 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center"><i class="fas fa-boxes-stacked"></i></div>
+              <div>
+                <div class="font-bold text-slate-900">School Stationery and Office Supply</div>
+                <p class="text-slate-600 mt-1">Daily-use items for students, offices and routine customer needs.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <div class="glass-card rounded-[2rem] p-6 border-gradient">
+            <div class="soft-card rounded-[1.6rem] p-7">
+              <h3 class="text-2xl font-black text-slate-900">Send Inquiry</h3>
+              <p class="text-slate-500 mt-2">For quotes, custom work or service details.</p>
+
+              <form class="mt-8 space-y-5" onsubmit="handleSubmit(event)">
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Name</label>
+                    <input type="text" required placeholder="Your name" class="w-full rounded-2xl border border-slate-200 bg-white text-slate-900 px-4 py-3.5 outline-none focus:border-cyan-500 focus:ring-4 focus:ring-cyan-500/10 transition" />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Phone</label>
+                    <input type="tel" placeholder="Your phone number" class="w-full rounded-2xl border border-slate-200 bg-white text-slate-900 px-4 py-3.5 outline-none focus:border-cyan-500 focus:ring-4 focus:ring-cyan-500/10 transition" />
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-2">Service</label>
+                  <select class="w-full rounded-2xl border border-slate-200 bg-white text-slate-900 px-4 py-3.5 outline-none focus:border-cyan-500 focus:ring-4 focus:ring-cyan-500/10 transition">
+                    <option>Printing Services</option>
+                    <option>Photocopy & Xerox</option>
+                    <option>Designing, Typing and Legal Documentation</option>
+                    <option>School Stationery and Office Supply</option>
+                    <option>Scanning & File Preparation</option>
+                    <option>Lamination & Binding</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-slate-700 mb-2">Message</label>
+                  <textarea rows="5" placeholder="Tell us what work you need..." class="w-full rounded-2xl border border-slate-200 bg-white text-slate-900 px-4 py-3.5 outline-none focus:border-cyan-500 focus:ring-4 focus:ring-cyan-500/10 transition"></textarea>
+                </div>
+                <button type="submit" class="w-full cta-button rounded-2xl bg-cyan-500 text-white px-6 py-4 font-bold">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-14 border-t border-slate-200 bg-white/75">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3">
+            <div class="w-14 h-14 rounded-2xl overflow-hidden bg-white ring-1 ring-slate-200">
+              <img src="https://i.ibb.co/xKyZvY46/Rizwan-Computer-Logo.png" alt="Rizwan Computer Logo" class="w-full h-full object-cover" />
+            </div>
+            <div>
+              <div class="font-extrabold text-xl text-slate-900">Rizwan Computer</div>
+              <div class="text-sm text-slate-600">Printing • Photocopy • Documentation</div>
+            </div>
+          </div>
+          <p class="mt-5 text-slate-600 max-w-xl leading-7">Professional service presentation for printing, documentation, stationery, office supply, scanning, lamination and binding needs.</p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-4 text-slate-900">Quick Links</h4>
+          <ul class="space-y-3 text-slate-600">
+            <li><a href="#home" class="hover:text-cyan-600 transition">Home</a></li>
+            <li><a href="#services" class="hover:text-cyan-600 transition">Services</a></li>
+            <li><a href="#reviews" class="hover:text-cyan-600 transition">Reviews</a></li>
+            <li><a href="#contact" class="hover:text-cyan-600 transition">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-lg mb-4 text-slate-900">Business Focus</h4>
+          <ul class="space-y-3 text-slate-600">
+            <li>Printing services</li>
+            <li>Legal documentation</li>
+            <li>School stationery</li>
+            <li>Office supply</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-10 pt-6 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+        <p>© 2024 Rizwan Computer. All rights reserved.</p>
+        <div class="flex items-center gap-5">
+          <a href="#services" class="hover:text-cyan-600 transition">Our Services</a>
+          <a href="#contact" class="hover:text-cyan-600 transition">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="scrollBtn" onclick="window.scrollTo({top:0, behavior:'smooth'})" class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-cyan-500 text-white shadow-xl shadow-cyan-500/20 flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:-translate-y-1">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('hidden');
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.add('hidden');
+      });
+    });
+
+    const scrollBtn = document.getElementById('scrollBtn');
+    const navbar = document.getElementById('navbar');
+
+    function handleScroll() {
+      if (window.scrollY > 250) {
+        scrollBtn.classList.remove('opacity-0', 'invisible');
+        scrollBtn.classList.add('opacity-100', 'visible');
+      } else {
+        scrollBtn.classList.add('opacity-0', 'invisible');
+        scrollBtn.classList.remove('opacity-100', 'visible');
+      }
+
+      if (window.scrollY > 20) {
+        navbar.classList.add('shadow-2xl', 'shadow-slate-200');
+      } else {
+        navbar.classList.remove('shadow-2xl', 'shadow-slate-200');
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    function revealOnScroll() {
+      document.querySelectorAll('.reveal').forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        const trigger = window.innerHeight - 90;
+        if (top < trigger) el.classList.add('active');
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+    let countersStarted = false;
+    function animateCounters() {
+      if (countersStarted) return;
+      const firstCounter = document.querySelector('.counter');
+      if (!firstCounter) return;
+      const rect = firstCounter.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 80) {
+        countersStarted = true;
+        document.querySelectorAll('.counter').forEach(counter => {
+          const target = Number(counter.dataset.target || 0);
+          let current = 0;
+          const increment = Math.max(1, Math.ceil(target / 75));
+          const large = target >= 1000;
+
+          const update = () => {
+            current += increment;
+            if (current < target) {
+              counter.textContent = large ? current.toLocaleString() + '+' : current + '+';
+              requestAnimationFrame(update);
+            } else {
+              counter.textContent = large ? target.toLocaleString() + '+' : target + '+';
+            }
+          };
+          update();
+        });
+      }
+    }
+
+    window.addEventListener('scroll', animateCounters);
+    animateCounters();
+
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert('Thanks! Your inquiry has been recorded for Rizwan Computer.');
+      event.target.reset();
+    }
+  </script>
+</body>
+</html>
